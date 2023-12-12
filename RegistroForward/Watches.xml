@@ -1,0 +1,6 @@
+﻿<Properties>
+  <WatchEntry0 value="Browser(&quot;Advantage Shopping&quot;).Page(&quot;ForwardCars&quot;).GetROProperty(&quot;url&quot;)" />
+  <WatchEntry1 value="Highlight textSignIn" />
+  <WatchEntry2 value="textSignIn" />
+  <WatchEntry3 value="InStr(currentUrl, &quot;http://localhost:3434/cars-app/#/login&quot;) &gt; 0" />
+</Properties>
