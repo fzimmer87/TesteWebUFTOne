@@ -2,8 +2,7 @@
 Browser("ForwardCars").Page("ForwardCars").WebMenu("Log In Register").Select "Log In" @@ script infofile_;_ZIP::ssf2.xml_;_
 Browser("ForwardCars").Page("ForwardCars").WebEdit("username").Set "lucialves1" @@ script infofile_;_ZIP::ssf3.xml_;_
 Browser("ForwardCars").Page("ForwardCars").WebEdit("password").SetSecure "123456" @@ script infofile_;_ZIP::ssf4.xml_;_
-Browser("ForwardCars").Page("ForwardCars").WebButton("Sign In").Click
-Browser("ForwardCars").Page("ForwardCars").Link("Loan Application").Click @@ script infofile_;_ZIP::ssf6.xml_;_
+Browser("ForwardCars").Page("ForwardCars").WebButton("Sign In").Click @@ script infofile_;_ZIP::ssf6.xml_;_
 
 
 Dim totalRows 
@@ -37,7 +36,12 @@ Browser("ForwardCars").Page("ForwardCars").WebButton("36 mo").Click @@ script in
 Wait(2)
 Browser("ForwardCars").Page("ForwardCars").WebButton("Apply").Click @@ script infofile_;_ZIP::ssf22.xml_;_
 Wait(2)
-Browser("ForwardCars").Page("ForwardCars").WebButton("OK").Click @@ script infofile_;_ZIP::ssf23.xml_;_
+AIUtil.SetContext Browser("creationtime:=1")
+AIUtil.FindTextBlock("Application Submitted!").CheckExists True
+AIUtil.FindTextBlock("Application Submitted!").Highlight
+Browser("ForwardCars").Page("ForwardCars").WebButton("OK").Click
+Wait(2)
+
 	i = i+1
 Wend
 Browser("title:=.*").Close
