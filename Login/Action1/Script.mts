@@ -1,5 +1,6 @@
 ﻿Dim xpathGuest 
 xpathGuest = "xpath:=/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]"
+				
 
 Browser("ForwardCars").Page("ForwardCars").WebButton("Guest").Click
 Browser("ForwardCars").Page("ForwardCars").WebMenu("Log In Register").Select "Log In"
@@ -18,7 +19,9 @@ While i <= totalRows
 	If i <> totalRows Then
 		Wait(2)
 		AIUtil.SetContext Browser("creationtime:=0")
-		Browser("ForwardCars").Page("ForwardCars").WebElement(xpathGuest).Click														            
+		Wait(2)
+		Browser("ForwardCars").Page("ForwardCars").WebElement(xpathGuest).Click
+		Wait(2)		
 		AIUtil.FindTextBlock("Logout").CheckExists True
 		Browser("ForwardCars").Page("ForwardCars").WebMenu("Log In Register").Select "Logout"
 		Wait(1)
@@ -29,6 +32,6 @@ While i <= totalRows
 	i = i + 1
 Wend @@ script infofile_;_ZIP::ssf25.xml_;_
 Wait(2)
-Browser("ForwardCars").Page("ForwardCars").WebElement("xpath:=/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]").Click
+Browser("ForwardCars").Page("ForwardCars").WebElement(xpathGuest).Click
 AIUtil.FindTextBlock("Logout").CheckExists True
 Browser("title:=.*").Close

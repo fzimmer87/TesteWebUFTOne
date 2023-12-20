@@ -7,7 +7,8 @@ Browser("Advantage Shopping").Page("ForwardCars").WebButton("Guest").Click
 Browser("Advantage Shopping").Page("ForwardCars").WebMenu("Log In Register").Select "Register"
 
 Dim totalRows 
-totalRows = DataTable.GetSheet("Register-teste").GetRowCount
+totalRows = DataTable.GetSheet("Register-teste").GetRowCount 
+
 Dim i
 i = 1
 While i <= totalRows 
